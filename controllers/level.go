@@ -24,6 +24,7 @@ type Response struct {
 
 func GetLevel(c fiber.Ctx) error {
 	db := initializers.DB
+	// levels := new([]models.Level)
 	var levels []models.Level
 	if err := db.Find(&levels).Error; err != nil {
 		return HandleErr(401, err.Error(), c)
